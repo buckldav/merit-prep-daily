@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <!--<![endif]-->
+  <head>
+    <title></title>
+    <link
+      rel="canonical"
+      href="https://www.missbeck.org/uvuprep/objective.html"
+    />
+    <style type="text/css">
+      @import url("https://fonts.googleapis.com/css?family=Share+Tech");
+      body {
+        font-family: "Share Tech", sans-serif;
+        margin-top: 1%;
+        padding: 0;
+        background: url("img/python.jpg") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+      }
+      p,
+      h2 {
+        margin: 0;
+        padding: 0;
+      }
+      #header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #fff;
+        font-size: 5em;
+        margin-top: 0px;
+      }
+      #header p {
+        font-size: 0.75em;
+        margin: 0.375em 0;
+      }
+      li {
+        font-size: 1.5em;
+      }
+      #content {
+        /*box-shadow: 0px 0px 9px rgba(0,0,0,0.15); */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+        min-width: 500px;
+        width: 70%;
+        padding: 1em;
+        background: rgba(255, 255, 255, 0.7);
+      }
+      img {
+        margin: 24px 0;
+        width: 80%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <p id="date"></p>
+      <script>
+        const dateP = document.querySelector("#date");
+        const date = new Date().toDateString().split(" ");
+        dateP.innerHTML = `${date[1]} ${date[2]}`;
+      </script>
+    </div>
+    <div id="content">
+      <p>
+        Reminder: Quizzes/Tests no retakes, Assignments can be redone and no
+        late points.
+      </p>
+      <ul>
+        <li>What are we doing here?</li>
+        <li>Mandatory human interaction</li>
+      </ul>
+      <img
+        src="https://imgs.xkcd.com/comics/making_friends.png"
+        alt="friends"
+      />
+    </div>
+  </body>
+</html>
