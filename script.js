@@ -1,4 +1,4 @@
-const courseSlug = window.location.pathname
+const courseName = window.location.pathname
   .split("/")
   .pop()
   .split(".")[0]
@@ -8,12 +8,23 @@ const courseSlug = window.location.pathname
     return val[0].toUpperCase() + val.substring(1, val.length);
   })
   .join(" ");
-document.getElementById("courseName").innerHTML = courseSlug;
+const courseSlug = courseName.split(" ").join("-").toLowerCase();
+document.getElementById("courseName").innerHTML = courseName;
+const getCanvasUrl = (slug) => {
+  const courses = {
+    "app-and-web-development": 1143,
+    "computer-programming-1": 959,
+    "exploring-computer-science": 955,
+    "web-development-capstone": 1142,
+  };
+  if (!courseSlug in Object.keys(courses) || top === self) {
+    return `https://cs.meritacademy.tech/#/disclosure?name=${slug}`;
+  } else {
+    return `https://meritacademy.instructure.com/courses/${courses[slug]}/pages/disclosure-document`;
+  }
+};
 document
   .getElementById("disclosure")
-  .setAttribute(
-    "href",
-    window.parent.location !== window.location
-      ? `${window.parent.location}/pages/disclosure-document`
-      : `https://cs.meritacademy.tech/#/disclosure?name=${courseSlug}`
-  );
+  .setAttribute("href", getCanvasUrl(courseSlug));
+
+console.log(window);
