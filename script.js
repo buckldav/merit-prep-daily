@@ -7,7 +7,8 @@ const courseName = window.location.pathname
     if (val === "and") return "&";
     return val[0].toUpperCase() + val.substring(1, val.length);
   })
-  .join(" ");
+  .join(" ")
+  .replace("Ap Computer Science", "AP CS");
 const courseSlug = courseName.split(" ").join("-").toLowerCase();
 document.getElementById("courseName").innerHTML = courseName;
 const getCanvasUrl = (slug) => {
