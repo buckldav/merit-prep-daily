@@ -7,10 +7,13 @@ const courseName = window.location.pathname
     if (val === "and") return "&";
     return val[0].toUpperCase() + val.substring(1, val.length);
   })
-  .join(" ")
-  .replace("Ap Computer Science", "AP CS");
+  .join(" ");
 const courseSlug = courseName.split(" ").join("-").toLowerCase();
-document.getElementById("courseName").innerHTML = courseName;
+document.getElementById("courseName").innerHTML = courseName.includes(
+  "Ap Computer Science"
+)
+  ? courseName.replace("Ap Computer Science", "AP CS")
+  : courseName;
 const getCanvasUrl = (slug) => {
   const courses = {
     "ap-computer-science-a": 967,
