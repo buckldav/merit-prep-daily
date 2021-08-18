@@ -12,7 +12,9 @@ const courseSlug = courseName.split(" ").join("-").toLowerCase();
 document.getElementById("courseName").innerHTML = courseName;
 const getCanvasUrl = (slug) => {
   const courses = {
-    "app-and-web-development": 1143,
+    "ap-computer-science-a": 967,
+    "ap-computer-science-principles": 951,
+    "app-and-web-development-1": 1143,
     "computer-programming-1": 959,
     "exploring-computer-science": 955,
     "web-development-capstone": 1142,
