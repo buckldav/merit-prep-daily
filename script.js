@@ -17,23 +17,27 @@ document.getElementById("courseName").innerHTML = courseName.includes(
 const getCanvasUrl = (slug) => {
   const courses = {
     "ap-computer-science-a": 971,
-    "ap-computer-science-principles": 956,
-    "app-and-web-development-1": 1143,
+    "ap-computer-science-principles": 1486,
     "computer-programming-1": 963,
-    "exploring-computer-science": 896,
+    "computer-science-principles": 896,
     "game-development-1": 1144,
+    "web-development-1": 1143,
     "web-development-capstone": 1141,
   };
+  const public = `https://cs.meritacademy.tech/#/disclosure?name=${slug}`;
   let url =
     courseSlug in Object.keys(courses)
       ? "https://meritacademy.instructure.com/courses/${courses[slug]}/pages/disclosure-document"
-      : `https://cs.meritacademy.tech/#/disclosure?name=${slug}`;
+      : public;
   fetch(url, {
     method: "HEAD",
   })
+    .then(() => {
+      return url;
+    })
     .catch((e) => {})
     .finally(() => {
-      return url;
+      return public;
     });
 };
 document
