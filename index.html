@@ -2,174 +2,20 @@
 <html class="no-js" lang="en">
   <!--<![endif]-->
   <head>
-    <title></title>
-    <link rel="canonical" href="https://www.missbeck.org/uvuprep/banner.html" />
-    <style type="text/css">
-      @import url("https://fonts.googleapis.com/css?family=Share+Tech");
-      body {
-        margin-top: 5%;
-        padding: 0;
-        background: url("img/python.jpg") no-repeat center center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        background-size: cover;
-        color: white !important;
-      }
-      .row {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-      }
-      .row > * {
-        margin: 0 1rem;
-      }
-      p,
-      h2 {
-        margin: 0;
-        padding: 0;
-      }
-      img {
-        margin: 0 auto;
-        display: block;
-        width: 80%;
-      }
-      .black-bg {
-        background: #00000099;
-      }
-      .black-bg a {
-        color: #bc002c !important;
-      }
-      #content {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        color: #fff;
-        font-family: "Share Tech", sans-serif;
-        font-size: 5em;
-        margin: 0;
-        padding: 0;
-      }
-      #content p {
-        font-size: 0.75em;
-      }
-      .button p {
-        padding: 5%;
-        color: #fff;
-        font-size: 0.3em !important;
-      }
-      .button {
-        text-align: center;
-        margin-top: 30px;
-        height: 5%;
-        width: 25%;
-        background: #bc002c;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .button.navy {
-        background: #050051;
-      }
-      .button:link {
-        text-decoration: none;
-      }
-      .button:hover {
-        background: #8c8b89;
-      }
-      #logo {
-        width: 160px;
-      }
-      @media only screen and (max-width: 900px) {
-        #content {
-          font-size: 3em;
-        }
-        #content p {
-          font-size: 0.5em;
-        }
-        .button p {
-          font-size: 0.45em !important;
-        }
-        .button {
-          width: 30%;
-        }
-      }
-      @media only screen and (max-width: 600px) {
-        #content {
-          font-size: 2em;
-        }
-        #content p {
-          font-size: 0.505em;
-        }
-        .button p {
-          font-size: 0.45em !important;
-        }
-        .button {
-          width: 35%;
-        }
-      }
-    </style>
+    <title>CS Class Landing Pages</title>
   </head>
 
   <body>
-    <div id="content">
-      <img src="img/m_white.png" alt="merit academy white logo" id="logo" />
-      <p>MERIT ACADEMY</p>
-      <h2>AP Computer Science</h2>
-      <a href="objective.html" class="button">
-        <p>Today's Objectives</p>
-      </a>
-      <div class="row">
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://codecombat.com/play"
-          class="button navy"
-        >
-          <p>CodeCombat (Python)</p>
-        </a>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://codegym.cc/me"
-          class="button navy"
-        >
-          <p>CodeGym (Java)</p>
-        </a>
-      </div>
-      <div class="row">
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="mailto:david.buckley@meritacademy.org"
-          class="button navy"
-        >
-          <p>
-            Email Mr. Buckley
-            <br />
-            <small>david.buckley@meritacademy.org</small>
-          </p>
-        </a>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="#"
-          class="button navy"
-          ><p>Disclosure Document</p></a
-        >
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://zoom.us/j/3292050822?pwd=VlZFTXFSbVQ1YjgvbGJtelJ1blI5dz09"
-          class="button navy"
-        >
-          <p>
-            Class Zoom Link
-            <br />
-            <small>(only for if school goes online)</small>
-          </p>
-        </a>
-      </div>
-    </div>
+    <h1>Courses</h1>
+    <ul></ul>
+    <script src="script.js"></script>
+    <script>
+      const ul = document.querySelector("ul");
+      let html = "";
+      Object.keys(courses).forEach((c) => {
+        html += `<li><a href="${c}.html">${c}</a></li>`;
+      });
+      ul.innerHTML = html;
+    </script>
   </body>
 </html>
