@@ -26,18 +26,18 @@ const getCanvasUrl = async () => {
   )
     ? courseName.replace("Ap Computer Science", "AP CS")
     : courseName;
-  const public = `https://cs.meritacademy.tech/#/disclosure?name=${courseSlug}`;
-  let url = Object.keys(courses).includes(courseSlug)
-    ? `https://meritacademy.instructure.com/courses/${courses[courseSlug]}/pages/disclosure-document`
-    : public;
-  try {
-    await fetch(url, {
-      method: "HEAD",
-      mode: "no-cors",
-    });
-  } catch (e) {
-    return public;
-  }
+  const url = `https://cs.meritacademy.tech/#/disclosure?name=${courseSlug}`;
+  // let url = Object.keys(courses).includes(courseSlug)
+  //   ? `https://meritacademy.instructure.com/courses/${courses[courseSlug]}/pages/disclosure-document`
+  //   : public;
+  // try {
+  //   await fetch(url, {
+  //     method: "HEAD",
+  //     mode: "no-cors",
+  //   });
+  // } catch (e) {
+  //   return public;
+  // }
 
   return url;
 };
