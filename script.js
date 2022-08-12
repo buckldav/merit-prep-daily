@@ -24,11 +24,17 @@ const getCanvasUrl = (slug) => {
     "game-development-1": 1144,
     "web-development-capstone": 1141,
   };
-  if (!courseSlug in Object.keys(courses) || top === self) {
-    return `https://cs.meritacademy.tech/#/disclosure?name=${slug}`;
-  } else {
-    return `https://meritacademy.instructure.com/courses/${courses[slug]}/pages/disclosure-document`;
-  }
+  let url =
+    courseSlug in Object.keys(courses)
+      ? "https://meritacademy.instructure.com/courses/${courses[slug]}/pages/disclosure-document"
+      : `https://cs.meritacademy.tech/#/disclosure?name=${slug}`;
+  fetch(url, {
+    method: "HEAD",
+  })
+    .catch((e) => {})
+    .finally(() => {
+      return url;
+    });
 };
 document
   .getElementById("disclosure")
