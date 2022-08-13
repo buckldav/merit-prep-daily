@@ -4,7 +4,7 @@ const courses = {
   "computer-programming-1": 1505,
   "computer-science-principles": 1587,
   "game-development-1": 1590,
-  "web-development-1": 1143,
+  "web-development-1": 1895,
   "web-development-capstone": 1398,
 };
 
